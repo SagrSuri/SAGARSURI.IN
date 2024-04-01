@@ -4,3 +4,9 @@
 [submodule "SubModule/food-delivery"]
 	path = SubModule/food-delivery
 	url = git@github.com:SagrSuri/food-delivery.git
+[submodule "SubModule/Import/Beautiify"]
+	path = SubModule/Import/Beautiify
+	url = https://github.com/Rakesh9100/Beautiify.git
+[submodule "SubModule/Import/CalcDiverse"]
+	path = SubModule/Import/CalcDiverse
+	url = https://github.com/Rakesh9100/CalcDiverse.git
