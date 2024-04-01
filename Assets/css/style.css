@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#body{
+    height: 130vh;
+    background-image: linear-gradient(to top , green , white , orange);
+}
+.heading{
+    text-align: center;
+    font-size: 2rem;
+    padding: 5px;
+}
+.projectLinks{
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2px;
+    color: #610195;
+}
+.projectLinks > p {
+    display: inline-block;
+    
+}
+.link-parent{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+}
