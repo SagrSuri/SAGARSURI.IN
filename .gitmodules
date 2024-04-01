@@ -5,3 +5,6 @@
 	path = SubModule/food-delivery
 	url = git@github.com:SagrSuri/food-delivery.git
 
+[submodule "SubModule/Multi-Page"]
+	path = SubModule/Multi-Page
+	url = https://github.com/SagrSuri/Multi-Page.git
