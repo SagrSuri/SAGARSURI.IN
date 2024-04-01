@@ -1,0 +1,6 @@
+[submodule "SubModule/pwskillsclone"]
+	path = SubModule/pwskillsclone
+	url = https://github.com/SagrSuri/pwskillsclone.git
+[submodule "SubModule/food-delivery"]
+	path = SubModule/food-delivery
+	url = git@github.com:SagrSuri/food-delivery.git
