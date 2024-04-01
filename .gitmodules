@@ -8,3 +8,15 @@
 [submodule "SubModule/Multi-Page"]
 	path = SubModule/Multi-Page
 	url = https://github.com/SagrSuri/Multi-Page.git
+[submodule "SubModule/Forked/Beautiify"]
+	path = SubModule/Forked/Beautiify
+	url = https://github.com/SagrSuri/Beautiify.git
+[submodule "SubModule/Forked/CalcDiverse"]
+	path = SubModule/Forked/CalcDiverse
+	url = https://github.com/SagrSuri/CalcDiverse.git
+[submodule "SubModule/Forked/PaciFyWebsite"]
+	path = SubModule/Forked/PaciFyWebsite
+	url = https://github.com/SagrSuri/PaciFyWebsite.git
+[submodule "SubModule/Forked/GitFileDownloader"]
+	path = SubModule/Forked/GitFileDownloader
+	url = https://github.com/SagrSuri/GitFileDownloader.git
