@@ -1,32 +1,73 @@
-*{
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-#body{
-    height: 130vh;
-    background-image: linear-gradient(to top , green , white , orange);
-}
-.heading{
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
     text-align: center;
-    font-size: 2rem;
-    padding: 5px;
 }
-.projectLinks{
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 2px;
-    color: #610195;
 }
-.projectLinks > p {
-    display: inline-block;
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
     
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
 }
-.link-parent{
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    align-items: center;
+
+
+/* Add a class to elements you want to animate */
+.animated {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-in forwards;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* costomization */
+a{
+    text-decoration: none;
 }
