@@ -44,4 +44,4 @@ I'm an aspiring full-stack web developer with a strong enthusiasm for learning a
 
 Let's connect and learn together in the exciting world of full-stack web development!
 [Repository](https://github.com/sagrsuri/sagrsuri/)
-[Uploding...](https://sagrsuri.github.io/sagrsuri/)
+[Live...](https://sagrsuri.github.io/sagrsuri/)
