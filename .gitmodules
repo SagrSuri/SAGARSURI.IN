@@ -29,3 +29,12 @@
 [submodule "SubModule/TheNetflixCopy"]
 	path = SubModule/TheNetflixCopy
 	url = https://github.com/SagrSuri/TheNetflixCopy.git
+[submodule "SubModule/tailwind-cart"]
+	path = SubModule/tailwind-cart
+	url = https://github.com/SagrSuri/tailwind-cart.git
+[submodule "SubModule/Beats"]
+	path = SubModule/Beats
+	url = https://github.com/SagrSuri/Beats.git
+[submodule "SubModule/fcc-form-project"]
+	path = SubModule/fcc-form-project
+	url = https://github.com/SagrSuri/fcc-form-project.git
