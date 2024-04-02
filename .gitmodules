@@ -20,3 +20,12 @@
 [submodule "SubModule/Forked/GitFileDownloader"]
 	path = SubModule/Forked/GitFileDownloader
 	url = https://github.com/SagrSuri/GitFileDownloader.git
+[submodule "SubModule/AmazonClone"]
+	path = SubModule/AmazonClone
+	url = https://github.com/SagrSuri/AmazonClone.git
+[submodule "SubModule/tailwindcss-static-portfolio"]
+	path = SubModule/tailwindcss-static-portfolio
+	url = https://github.com/SagrSuri/tailwindcss-static-portfolio.git
+[submodule "SubModule/TheNetflixCopy"]
+	path = SubModule/TheNetflixCopy
+	url = https://github.com/SagrSuri/TheNetflixCopy.git
