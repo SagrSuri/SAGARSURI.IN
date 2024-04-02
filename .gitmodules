@@ -38,3 +38,12 @@
 [submodule "SubModule/fcc-form-project"]
 	path = SubModule/fcc-form-project
 	url = https://github.com/SagrSuri/fcc-form-project.git
+[submodule "SubModule/Assignment-Portfolio"]
+	path = SubModule/Assignment-Portfolio
+	url = https://github.com/SagrSuri/Assignment-Portfolio.git
+[submodule "SubModule/Assignment-portfolio2"]
+	path = SubModule/Assignment-portfolio2
+	url = https://github.com/SagrSuri/Assignment-portfolio2.git
+[submodule "SubModule/Real-state"]
+	path = SubModule/Real-state
+	url = https://github.com/SagrSuri/Real-state.git
