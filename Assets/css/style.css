@@ -2,13 +2,15 @@
 
 /* Global styles */
 body {
+    background-color: #fff6cd;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #333;
+    height: 6rem;
+    background-color: #103f30b6;
     color: #fff;
     padding: 20px;
     text-align: center;
