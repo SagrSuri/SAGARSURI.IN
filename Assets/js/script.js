@@ -27,7 +27,7 @@ function randomColor() {
 }
 
 // Adding event listener for click on the button
-document.getElementById("changeColorBtn").addEventListener("click", function() {
+document.getElementById("changeColorBtn").addEventListener("dblclick", function() {
     // Change the background color of the button to a random color
     this.style.backgroundColor = randomColor();
 });
