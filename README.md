@@ -38,10 +38,11 @@ I'm an aspiring full-stack web developer with a strong enthusiasm for learning a
 [![Twitter](https://img.shields.io/badge/Twitter--blue?style=social&logo=X)](https://twitter.com/sagrsuri)
 [![Instagram](https://img.shields.io/badge/Instagram--red?style=social&logo=instagram)](https://www.instagram.com/sagarsuri.in)
 [![Whatsapp](https://img.shields.io/badge/Whatsapp--red?style=social&logo=whatsapp)](https://wa.me/918446262100)
-[![Website](https://img.shields.io/badge/Website--red?style=social&logo=github)](https://sagrsuri.github.io/sagrsuri/)
+
 
 
 📩 *SAGRSURI@GMAIL.COM*
-
+<br><br><br>
 Let's connect and learn together in the exciting world of full-stack web development!
-[Repository](https://github.com/sagrsuri/sagrsuri/)
+[Repository](https://github.com/sagrsuri/sagrsuri/) <br><br>
+[![Website](https://img.shields.io/badge/githubPages--red?style=social&logo=github)](https://sagrsuri.github.io/sagrsuri/)
