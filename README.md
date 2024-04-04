@@ -45,7 +45,4 @@ I'm an aspiring full-stack web developer with a strong enthusiasm for learning a
 <br><br><br>
 Let's connect and learn together in the exciting world of full-stack web development! <br>
 [Repository](https://github.com/sagrsuri/sagrsuri/) <br><br>
-[![Website](https://img.shields.io/badge/githubPages--red?style=social&logo=github)](https://sagrsuri.github.io/sagrsuri/) <br>
-![Profile Visitors](https://komarev.com/ghpvc/?username=SagrSuri&label=PROFILE%20VISITORS&color=CD5F08&style=for-the-badge)
-
-
+[![Website](https://img.shields.io/badge/githubPages--red?style=social&logo=github)](https://sagrsuri.github.io/sagrsuri/)
