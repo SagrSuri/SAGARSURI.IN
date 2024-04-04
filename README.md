@@ -1,4 +1,4 @@
-## <div align="center">Hi there! 👋 I'm SAGAR SURI</div>
+# <div align="center">Hi there! 👋 I'm SAGAR SURI</div>
 
 <div align="center">
   <img src="https://camo.githubusercontent.com/05af010c80c18d06b84aff21aee5e82f03bcc8d9c2cad0fbbe7dffbc2fbe4360/68747470733a2f2f6769746875622d70726f64756374696f6e2d757365722d61737365742d3632313064662e73332e616d617a6f6e6177732e636f6d2f37333939333737352f3238333933303131322d37363638376635312d616339392d343865662d613434622d6464313163316437386537662e676966" alt="Description of image" style="opacity: 0.5;">
