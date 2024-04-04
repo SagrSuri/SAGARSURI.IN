@@ -43,6 +43,12 @@ I'm an aspiring full-stack web developer with a strong enthusiasm for learning a
 
 📩 [*SAGRSURI@GMAIL.COM*](mailto:SAGRSURI@GMAIL.COM)
 <br><br><br>
-Let's connect and learn together in the exciting world of full-stack web development!
+Let's connect and learn together in the exciting world of full-stack web development! <br>
 [Repository](https://github.com/sagrsuri/sagrsuri/) <br><br>
-[![Website](https://img.shields.io/badge/githubPages--red?style=social&logo=github)](https://sagrsuri.github.io/sagrsuri/)
+[![Website](https://img.shields.io/badge/githubPages--red?style=social&logo=github)](https://sagrsuri.github.io/sagrsuri/) <br>
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=SagrSuri.SagrSuri)
+
+![Visitors](https://shields.io/badge/dynamic/json?color=blue&label=Profile%20views&query=$.total&url=https://api.github-star-counter.workers.dev/user/SagrSuri)
+
+
+
