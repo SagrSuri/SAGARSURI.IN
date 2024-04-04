@@ -41,7 +41,7 @@ I'm an aspiring full-stack web developer with a strong enthusiasm for learning a
 
 
 
-📩 [*SAGRSURI@GMAIL.COM*](mailto:youremail@example.com)
+📩 [*SAGRSURI@GMAIL.COM*](mailto:SAGRSURI@GMAIL.COM)
 <br><br><br>
 Let's connect and learn together in the exciting world of full-stack web development!
 [Repository](https://github.com/sagrsuri/sagrsuri/) <br><br>
