@@ -1,7 +1,8 @@
 # Hi there! 👋 I'm SAGAR SURI
 <div align="center">
-  <img src="https://raw.githubusercontent.com/mikonoid/mikonoid/main/images/gifs/coder3.gif" alt="Description of image">
+  <img src="https://raw.githubusercontent.com/mikonoid/mikonoid/main/images/gifs/coder3.gif" alt="Description of image" style="opacity: 0.5;">
 </div>
+
 
 ## About Me
 I'm an aspiring full-stack web developer with a strong enthusiasm for learning and building web applications. My journey in web development started with a passion for creating visually appealing and functional websites, and it has since evolved into a deep interest in mastering both front-end and back-end technologies. I'm dedicated to honing my skills and expanding my knowledge to become proficient in all aspects of full-stack development.
