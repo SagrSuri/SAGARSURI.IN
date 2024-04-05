@@ -1,0 +1,107 @@
+/* styles.css */
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global styles */
+body {
+    /* font-family: "Poppins", sans-serif, 'Times New Roman', Times, serif; */
+    font-weight: 500;
+
+    background-color: #fff1c0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 6rem;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+/*     
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    } */
+}
+
+
+/* Add a class to elements you want to animate */
+.animated {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease-in forwards;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* costomization */
+a{
+    text-decoration: none;
+}
+
+header > nav > ul > li > a:hover {
+    background-color: #fcffd9;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 1rem;
+}
+header > nav > ul > li > a:active {
+    background-color: #f9ff41;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 1rem;
+}
+
+/* for cursor */
+.point {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none; /* Ensures clicks pass through the points */
+    transition: transform 0.3s ease; /* Animation for scaling */
+  }
+

@@ -1,0 +1,49 @@
+[submodule "SubModule/pwskillsclone"]
+	path = SubModule/pwskillsclone
+	url = https://github.com/SagrSuri/pwskillsclone.git
+[submodule "SubModule/food-delivery"]
+	path = SubModule/food-delivery
+	url = git@github.com:SagrSuri/food-delivery.git
+
+[submodule "SubModule/Multi-Page"]
+	path = SubModule/Multi-Page
+	url = https://github.com/SagrSuri/Multi-Page.git
+[submodule "SubModule/Forked/Beautiify"]
+	path = SubModule/Forked/Beautiify
+	url = https://github.com/SagrSuri/Beautiify.git
+[submodule "SubModule/Forked/CalcDiverse"]
+	path = SubModule/Forked/CalcDiverse
+	url = https://github.com/SagrSuri/CalcDiverse.git
+[submodule "SubModule/Forked/PaciFyWebsite"]
+	path = SubModule/Forked/PaciFyWebsite
+	url = https://github.com/SagrSuri/PaciFyWebsite.git
+[submodule "SubModule/Forked/GitFileDownloader"]
+	path = SubModule/Forked/GitFileDownloader
+	url = https://github.com/SagrSuri/GitFileDownloader.git
+[submodule "SubModule/AmazonClone"]
+	path = SubModule/AmazonClone
+	url = https://github.com/SagrSuri/AmazonClone.git
+[submodule "SubModule/tailwindcss-static-portfolio"]
+	path = SubModule/tailwindcss-static-portfolio
+	url = https://github.com/SagrSuri/tailwindcss-static-portfolio.git
+[submodule "SubModule/TheNetflixCopy"]
+	path = SubModule/TheNetflixCopy
+	url = https://github.com/SagrSuri/TheNetflixCopy.git
+[submodule "SubModule/tailwind-cart"]
+	path = SubModule/tailwind-cart
+	url = https://github.com/SagrSuri/tailwind-cart.git
+[submodule "SubModule/Beats"]
+	path = SubModule/Beats
+	url = https://github.com/SagrSuri/Beats.git
+[submodule "SubModule/fcc-form-project"]
+	path = SubModule/fcc-form-project
+	url = https://github.com/SagrSuri/fcc-form-project.git
+[submodule "SubModule/Assignment-Portfolio"]
+	path = SubModule/Assignment-Portfolio
+	url = https://github.com/SagrSuri/Assignment-Portfolio.git
+[submodule "SubModule/Assignment-portfolio2"]
+	path = SubModule/Assignment-portfolio2
+	url = https://github.com/SagrSuri/Assignment-portfolio2.git
+[submodule "SubModule/Real-state"]
+	path = SubModule/Real-state
+	url = https://github.com/SagrSuri/Real-state.git
