@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("loading").style.display = "none";
       // Show content after loading animation completes
       document.getElementById("content").style.display = "block";
-    }, 2000); // Adjust duration as needed
+    }, 600); // Adjust duration as needed
   });
 
 
