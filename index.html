@@ -55,19 +55,19 @@
         }
     </style>
 </head>
-<body id="font-set" class="bg-slate-200 text-slate-950">
+<body id="font-set" class="bg-slate-300 text-slate-950">
     <!-- Loading Animation -->
     <div id="loading" class="loading"></div>
 
     <!-- Content -->
     <div id="content" style="display: none;">
-        <header class="p-4 bg-slate-100 dark:bg-slate-800">
+        <header class="p-4 bg-slate-50 dark:bg-slate-800">
             <nav class="flex justify-between items-center">
                 <ul class="flex gap-8">
-                    <li><a href="./index.html">HOME</a></li>
-                    <li><a href="./Assets/HTML/project.html">PROJECT</a></li>
+                    <li><a class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse" href="./index.html">HOME</a></li>
+                    <li><a class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse" href="./Assets/HTML/project.html">PROJECT</a></li>
                 </ul>
-                <button onclick="toggleDarkMode()" type="button" class="bg-slate-500 text-white dark:bg-slate-300 dark:text-black text-sm rounded-full px-4 py-2">Dark Mode</button>
+                <button onclick="toggleDarkMode()" type="button" class="bg-slate-500 hover:animate-pulse text-white dark:bg-slate-300 dark:text-black text-sm rounded-full px-4 py-2">Dark Mode</button>
             </nav>
         </header>
         <main class="dark:bg-slate-950 h-[85vh] flex flex-col  align-middle">
