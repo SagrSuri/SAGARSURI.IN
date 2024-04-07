@@ -8,19 +8,53 @@
     <link rel="stylesheet" href="../../src/output.css">
     <link rel="stylesheet" href="../CSS/styles.css">
     
+    <style>
+        /* Loading animation styles */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 5px solid #3498db;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            z-index: 9999; /* Ensure it's above all other elements */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Text color for dark mode */
+        body.dark {
+            color: white;
+        }
+        
+        /* Text color for specific elements in dark mode */
+        body.dark #content header a {
+            color: white;
+        }
+    </style>
 </head>
-<body id="font-set">
+<body id="font-set" class="bg-slate-200 text-slate-950">
     <!-- Loading Animation -->
     <div id="loading" class="loading"></div>
 
     <!-- Content -->
-    <div id="content" class="dark:bg-slate-950 dark:text-white bg-slate-200 text-slate-950 h-[100vh] content w-[100%]">
-        <header>
-            <nav class="flex justify-between h-10 self-center">
-                <h1 class="self-center p-1 m-1 text-xl"><a href="../../index.html">HOME</a></h1>
-                
-
-                <button onclick="toggleDarkMode()" type="button" class="bg-slate-950 text-white dark:bg-white dark:text-black text-[0.7rem] rounded-3xl hover:bg-[#391543] hover:text-[rgb(179,255,210)] pr-3 pl-3  m-1 dark:hover:bg-[#fdfdd8]">Dark on/off</button>
+    <div id="content" class="dark:bg-slate-950 dark:text-white bg-slate-200 text-slate-950 h-[100vh] content w-[100%]" style="display: none;">
+        <header class="p-4 bg-slate-100 dark:bg-slate-800 mt-0">
+            <nav class="flex justify-between items-center">
+               
+                <ul class="flex gap-8">
+                    <li><a href="../../index.html">HOME</a></li>
+                    <li><a href="./project.html">PROJECT</a></li>
+                </ul>
+                <button onclick="toggleDarkMode()" type="button" class="bg-slate-500 text-white dark:bg-slate-300 dark:text-black text-sm rounded-full px-4 py-2">Dark Mode</button>
             </nav>
         </header>
         <main>
@@ -60,38 +94,57 @@
 
             </section>
             
-            <h1 class="fixed right-1/2 top-1/5 text-xl">working on page...</h1>
+            <!-- <h1 class="fixed right-1/2 top-1/5 text-xl">working on page...</h1> -->
         </main>
-        <footer>
+        <footer class="p-4 bg-slate-100 dark:bg-slate-800 text-center fixed bottom-0 w-full">
+            <!-- Footer content here -->
 
+            <h1 class="text-xl font-bold"><a href="https://github.com/sagrsuri/sagarsuri.in">Contribute <i class="fab fa-github"></i></a></h1>
+
+            <p>&copy; <a href="https://linkedin.com/in/sagrsuri" target="_blank">SAGARSURI.<i class="fa-brands fa-linkedin-in"></i></a> | 2023-2024</p>
         </footer>
     </div>
 
     <!-- External JavaScript -->
     <script src="https://kit.fontawesome.com/25a68331e1.js" crossorigin="anonymous"></script>
-
+    
     <script> 
+     // Function to toggle dark mode
+     function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle('dark');
+        // Save the current mode to localStorage
+        const isDarkMode = body.classList.contains('dark');
+        localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+    }
 
-     // For Dark Mode
-  function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle('dark');
-  }
+    // Function to check and apply the saved dark mode preference
+    function applyDarkModePreference() {
+        const savedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
+        const body = document.body;
+        // If dark mode preference is saved and it's true, apply dark mode
+        if (savedDarkMode) {
+            body.classList.add('dark');
+        } else {
+            body.classList.remove('dark');
+        }
+    }
 
-
-        // PAGE LOADING ANIMATION 
+    // PAGE LOADING ANIMATION 
     document.addEventListener("DOMContentLoaded", function () {
         // Show loading animation when the page starts loading
         document.getElementById("loading").style.display = "block";
-    
-        // Hide loading animation after 2-3 seconds (adjust as needed)
+
+        // Apply the saved dark mode preference
+        applyDarkModePreference();
+
+        // Hide loading animation after a certain duration (adjust as needed)
         setTimeout(function () {
-          document.getElementById("loading").style.display = "none";
-          // Show content after loading animation completes
-          document.getElementById("content").style.display = "block";
+            document.getElementById("loading").style.display = "none";
+            // Show content after loading animation completes
+            document.getElementById("content").style.display = "block";
         }, 500); // Adjust duration as needed
-      });
-    
-        </script>
+    });
+    </script>
 </body>
 </html>
