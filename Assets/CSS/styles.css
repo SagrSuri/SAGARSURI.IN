@@ -53,5 +53,12 @@
   }
 
 a:hover{
-  color: blue;
+  color: #1a6d72;
 }
+
+/* Font on main */
+/* .set-font{
+  font-family: serif;
+  font-size: 1.5rem;
+  color: antiquewhite;
+} */
