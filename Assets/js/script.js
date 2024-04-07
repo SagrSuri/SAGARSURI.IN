@@ -13,16 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("loading").style.display = "none";
       // Show content after loading animation completes
       document.getElementById("content").style.display = "block";
-    }, 600); // Adjust duration as needed
+    }, 500); // Adjust duration as needed
   });
 
-
-  // ADDING TOGGEL BUTTON OF DARK MODE.
-  'use strict'
-
-const toggle = document.getElementById('toggle');
-const body = document.querySelector('body');
-toggle.onclick = function () {
-    toggle.classList.toggle('active');
-    body.classList.toggle('active');
-}
