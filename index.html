@@ -116,7 +116,7 @@
                     <li><a class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse" href="./index.html">HOME</a></li>
                     <li><a class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse" href="./Assets/HTML/project.html">PROJECT</a></li>
                 </ul>
-                <div class="container text-center">
+                <div class="container text-center  hidden md:block ">
                     <div class="text-container relative">
                         <span class="text const_text">I am </span>
                         <span class="text animated_text dark:text-white relative inline-block">
@@ -132,10 +132,14 @@
         </header>
         <main class="dark:bg-slate-950 h-[85vh] flex flex-col items-center justify-center">
             <!-- PAGE CONTENT STARTING FROM THERE -->
-            <div class="relative hidden md:block ">
+            <div class="relative">
                 <img src="./Assets/IMG/Sagar-profile.png" class="m-3 block self-center w-52 h-52 rounded-full border border-black shadow-md" alt="Image">
                 <div class="absolute top-0 left-0 w-full h-full bg-transparent pointer-events-none"></div>
             </div>
+            <div class="block md:hidden">
+                <h1 class="text-2xl">SAGAR SURI</h1>
+              </div>
+                          
             <p class="text-xl text-center font-normal m-3 set-font font-serif dark:text-[#d9d9d9] overflow-clip">I'm an aspiring full-stack web developer with a strong enthusiasm for learning and building web applications. My journey in web development started with a passion for creating visually appealing and functional websites, and it has since evolved into a deep interest in mastering both front-end and back-end technologies. I'm dedicated to honing my skills and expanding my knowledge to become proficient in all aspects of full-stack development.</p>
             <ul class="flex justify-center gap-4 align-middle m-4 text-2xl">
                 <li><a href="https://sagarsurics.blogspot.com"><i class="fa-solid fa-book hover:animate-bounce" style="color: #ba7f01; "></i></a></li>
