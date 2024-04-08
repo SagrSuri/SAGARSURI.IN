@@ -54,7 +54,11 @@
                     <li><a class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse" href="../../index.html">HOME</a></li>
                     <li><a class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse" href="./project.html">PROJECT</a></li>
                 </ul>
-                <button onclick="toggleDarkMode()" type="button" class="bg-slate-500 hover:animate-pulse text-white dark:bg-slate-300 dark:text-black text-sm rounded-full px-4 py-2">Dark Mode</button>
+                <!-- <button onclick="toggleDarkMode()" type="button" class="bg-slate-500 hover:animate-pulse text-white dark:bg-slate-300 dark:text-black text-sm rounded-full px-4 py-2">Dark Mode</button> -->
+
+                <button onclick="toggleDarkMode()" id="darkModeToggle" type="button" class="hover:animate-pulse stroke-lime-50  ">
+                    <img src="../IMG/toggel off.png" alt="off" class="w-12 h-10">
+                </button>
             </nav>
         </header>
         <main class="h-[80vh] font-normal font-serif">
@@ -84,13 +88,14 @@
                     <li><a href="../../SubModule/zforked/CalcDiverse/index.html" target="_blank">CalcDiverse</a><a href="https://github.com/SagrSuri/CalcDiverse" target="_blank"> <i class="fa-brands fa-github"></i></a></li>
                     <li><a href="../../SubModule/zforked/PaciFyWebsite/index.html" target="_blank">PaciFyWebsite</a><a href="https://github.com/SagrSuri/PaciFyWebsite" target="_blank"> <i class="fa-brands fa-github"></i></a></li>
                     <li><a href="../../SubModule/zforked/GitFileDownloader/index.html" target="_blank">GitFileDownloader</a><a href="https://github.com/SagrSuri/GitFileDownloader" target="_blank"> <i class="fa-brands fa-github"></i></a></li>
+
                     <!-- Add target="_blank" to other <a> tags as needed -->
                 </ul>
             </section>
             
             <!-- <h1 class="fixed right-1/2 top-1/5 text-xl">working on page...</h1> -->
         </main>
-        <footer class="p-4 bg-slate-100 dark:bg-slate-800 text-center w-full">
+        <footer class="p-4 bg-slate-100 dark:bg-slate-800 text-center w-full mt-2">
             <!-- Footer content here -->
 
             <h1 class="text-xl font-bold"><a href="https://github.com/sagrsuri/sagarsuri.in">Contribute <i class="fa-solid fa-code-branch"></i></a></h1>
@@ -103,42 +108,64 @@
     <script src="https://kit.fontawesome.com/25a68331e1.js" crossorigin="anonymous"></script>
     
     <script> 
-     // Function to toggle dark mode
-     function toggleDarkMode() {
-        const body = document.body;
-        body.classList.toggle('dark');
-        // Save the current mode to localStorage
-        const isDarkMode = body.classList.contains('dark');
-        localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    }
-
-    // Function to check and apply the saved dark mode preference
-    function applyDarkModePreference() {
-        const savedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
-        const body = document.body;
-        // If dark mode preference is saved and it's true, apply dark mode
-        if (savedDarkMode) {
-            body.classList.add('dark');
-        } else {
-            body.classList.remove('dark');
+       // Function to toggle dark mode
+       function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark');
+            
+            // Save the current mode to localStorage
+            const isDarkMode = body.classList.contains('dark');
+            localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+    
+            // Change the image of the toggle button based on dark mode state
+            const toggleButton = document.getElementById('darkModeToggle');
+            if (isDarkMode) {
+                toggleButton.querySelector('img').src = '../IMG/on-toggel.png'; // Change image to ON when dark mode is activated
+            } else {
+                toggleButton.querySelector('img').src = '../IMG/toggel off.png'; // Change image to OFF when dark mode is deactivated
+            }
         }
-    }
+    
+        // Function to check and apply the saved dark mode preference
+        function applyDarkModePreference() {
+            const savedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
+            const body = document.body;
+            // If dark mode preference is saved and it's true, apply dark mode
+            if (savedDarkMode) {
+                body.classList.add('dark');
+            } else {
+                body.classList.remove('dark');
+            }
+    
+            // Set initial image based on dark mode state
+            const toggleButton = document.getElementById('darkModeToggle');
+            if (savedDarkMode) {
+                toggleButton.querySelector('img').src = '../IMG/on-toggel.png'; // Set image to ON if dark mode is initially activated
+            } else {
+                toggleButton.querySelector('img').src = '../IMG/toggel off.png'; // Set image to OFF if dark mode is initially deactivated
+            }
+        }
+    
+        // PAGE LOADING ANIMATION 
+        document.addEventListener("DOMContentLoaded", function () {
+            // Show loading animation when the page starts loading
+            document.getElementById("loading").style.display = "block";
+    
+            // Apply the saved dark mode preference
+            applyDarkModePreference();
+    
+            // Hide loading animation after a certain duration (adjust as needed)
+            setTimeout(function () {
+                document.getElementById("loading").style.display = "none";
+                // Show content after loading animation completes
+                document.getElementById("content").style.display = "block";
+            }, 1000); // Adjust duration as needed
+        });
+    
+        // Prevent context menu on right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
 
-    // PAGE LOADING ANIMATION 
-    document.addEventListener("DOMContentLoaded", function () {
-        // Show loading animation when the page starts loading
-        document.getElementById("loading").style.display = "block";
-
-        // Apply the saved dark mode preference
-        applyDarkModePreference();
-
-        // Hide loading animation after a certain duration (adjust as needed)
-        setTimeout(function () {
-            document.getElementById("loading").style.display = "none";
-            // Show content after loading animation completes
-            document.getElementById("content").style.display = "block";
-        }, 1000); // Adjust duration as needed
-    });
     </script>
 </body>
 </html>
