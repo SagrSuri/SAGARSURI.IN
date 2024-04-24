@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../IMG/project.png" type="image/x-icon">
     <link rel="stylesheet" href="../../src/output.css">
     <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/project.css">
     
     <style>
         /* Loading animation styles */
@@ -39,14 +40,77 @@
         body.dark #content header a {
             color: white;
         }
+
+        /* Push footer to the bottom */
+        html, body {
+            height: 100%;
+        }
+
+        #content {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+
+        /* For Text Animation */
+        .container .text {
+            font-size: 1.5rem;
+            font-weight: 550;
+        }
+
+        .container .animated_text {
+            color: #e30085;
+            position: relative;
+        }
+
+        .container .animated_text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            border-left: 2px solid #24a700;
+            animation: typing 4s steps(12) infinite;
+        }
+
+        @keyframes typing {
+            40%,
+            60% {
+                left: 100%;
+            }
+            100% {
+                left: 0;
+            }
+        }
+
+        /* Apply dark mode styles */
+        .dark .container .animated_text::before {
+            background-color: #1F2933; /* Change background color for dark mode */
+        }
+
+        .dark .container .text.const_text {
+            color: white; /* Change text color for dark mode */
+        }
+
+        .dark .container .text.animated_text {
+            color: white; /* Change text color for dark mode */
+        }
+
     </style>
 </head>
-<body id="font-set" class="bg-slate-200 text-slate-950">
+<body id="font-set" class="bg-slate-200 text-slate-950 dark:bg-slate-950 dark:text-white ">
     <!-- Loading Animation -->
     <div id="loading" class="loading"></div>
 
     <!-- Content -->
-    <div id="content" class="dark:bg-slate-950 dark:text-white bg-slate-200 text-slate-950 h-[100vh] content w-[100%]" style="display: none;">
+    <div id="content" style="display: none;">
         <header class="p-4 bg-slate-100 dark:bg-slate-800 mt-0">
             <nav class="flex justify-between items-center">
                
@@ -56,17 +120,17 @@
                 </ul>
                 <!-- <button onclick="toggleDarkMode()" type="button" class="bg-slate-500 hover:animate-pulse text-white dark:bg-slate-300 dark:text-black text-sm rounded-full px-4 py-2">Dark Mode</button> -->
 
-                <button onclick="toggleDarkMode()" id="darkModeToggle" type="button" class="hover:animate-pulse stroke-lime-50  ">
+                <button onclick="toggleDarkMode()" id="darkModeToggle" type="button" class="hover:animate-pulse stroke-lime-50  active:animate-ping">
                     <img src="../IMG/toggel off.png" alt="off" class="h-12 w-14">
                 </button>
             </nav>
         </header>
-        <main class="h-[80vh] font-normal font-serif">
+        <main class="font-normal font-serif w-full overflow-y-auto dark:bg-slate-950 dark:text-white ">
             <section>
 
-                <p class="text-start  mt-3 ml-4 text-xl text-[#58186f] dark:text-[#8eff8e]">CHECK ALL PROJECTS LIVE | GITHUB REPO LINK ALSO PROVIDED</p>
+                <p class="text-start  mt-3 ml-2 text-xl text-[#58186f] dark:text-[#8eff8e]">CHECK ALL PROJECTS LIVE | GITHUB REPO LINK ALSO PROVIDED</p>
 
-                <ul style="padding-left: 20px; list-style-type: number;" class="p-2 m-1 ml-5">
+                <ul style="padding-left: 20px; list-style-type: number;" class="p-2 m-1 ml-3">
                     <li><a href="../../SubModule/tailwindcss-static-portfolio/index.html" title="Live" target="_blank">tailwindcss-static-portfolio</a><a href="https://github.com/SagrSuri/tailwindcss-static-portfolio" target="_blank">  <i title="code" class="fa-brands fa-github"></i></a></li>
                     <li><a href="../../SubModule/pwskillsclone/index.html" title="Live" target="_blank">pwSkillsClone</a> <a href="https://github.com/SagrSuri/pwskillsclone" target="_blank"> <i title="code" class="fa-brands fa-github"></i></a></li>
                     <li><a href="../../SubModule/food-delivery/index.html" title="Live" target="_blank">Food Delivery</a><a href="https://github.com/SagrSuri/food-delivery" target="_blank"> <i title="code" class="fa-brands fa-github"></i></a></li>
@@ -81,9 +145,9 @@
                     <li><a href="../../SubModule/Real-state/index.html" title="Live" target="_blank">Real-state</a><a href="https://github.com/SagrSuri/Real-state" target="_blank"> <i title="code" class="fa-brands fa-github"></i></a></li>
                     <!-- Add target="_blank" to other <a> tags as needed -->
                 </ul>
-                <p class="text-start  mt-3 ml-4 text-xl text-[#58186f] dark:text-[#8eff8e]">FORKED</p>
+                <p class="text-start  mt-3 ml-2 text-xl text-[#58186f] dark:text-[#8eff8e]">FORKED</p>
 
-                <ul class="ml-5" style="padding-left: 20px; list-style-type: number;">
+                <ul class="ml-3" style="padding-left: 20px; list-style-type: number;">
                     <li><a href="../../SubModule/zforked/Beautiify/index.html" target="_blank">Beautiify</a><a href="https://github.com/SagrSuri/Beautiify" target="_blank"> <i class="fa-brands fa-github"></i></a></li>
                     <li><a href="../../SubModule/zforked/CalcDiverse/index.html" target="_blank">CalcDiverse</a><a href="https://github.com/SagrSuri/CalcDiverse" target="_blank"> <i class="fa-brands fa-github"></i></a></li>
                     <li><a href="../../SubModule/zforked/PaciFyWebsite/index.html" target="_blank">PaciFyWebsite</a><a href="https://github.com/SagrSuri/PaciFyWebsite" target="_blank"> <i class="fa-brands fa-github"></i></a></li>
@@ -92,13 +156,11 @@
                     <!-- Add target="_blank" to other <a> tags as needed -->
                 </ul>
             </section>
-            
-            <!-- <h1 class="fixed right-1/2 top-1/5 text-xl">working on page...</h1> -->
         </main>
         <footer class="p-4 bg-slate-100 dark:bg-slate-800 text-center  w-full">
             <!-- Footer content here -->
             <h1 class="text-xl font-bold"><a href="https://github.com/sagrsuri/sagarsuri.in">Contribute <i class="fa-solid fa-code-branch"></i></a></h1>
-            <p>&copy; <a class="hover:animate-pulse" href="https://linkedin.com/in/sagrsuri" target="_blank">SAGARSURI.<i class="fa-brands fa-linkedin-in"></i></a> | 2023-2024 |  <a href="https://youtube.com/@sagrsuri"><img width="22" height="22" class="inline-block hover:animate-bounce" src="https://img.icons8.com/3d-fluency/22/youtube-play.png" alt="youtube-play"/></a> | <a href="https://instagram.com/sagarsuri.in"><img width="22" height="22" src="https://img.icons8.com/3d-fluency/22/instagram-new.png" alt="instagram-new" class="inline-block hover:animate-bounce"/></a> | <a href="https://x.com/sagrsuri"><img width="18" height="18" class="inline-block hover:animate-bounce rounded-sm" src="../IMG/x.png" alt="twitterx--v1"/></a></p>
+            <p>&copy; <a class="hover:animate-pulse" href="https://linkedin.com/in/sagrsuri" target="_blank">SAGARSURI.<i class="fa-brands fa-linkedin-in"></i></a> | 2023-2024 |  <a target="_blank" href="https://youtube.com/@sagrsuri"><img width="22" height="22" class="inline-block hover:animate-bounce" src="https://img.icons8.com/3d-fluency/22/youtube-play.png" alt="youtube-play"/></a> | <a target="_blank" href="https://instagram.com/sagarsuri.in"><img width="22" height="22" src="https://img.icons8.com/3d-fluency/22/instagram-new.png" alt="instagram-new" class="inline-block hover:animate-bounce"/></a> | <a target="_blank" href="https://sagarsurics.blogspot.com"><img class="hover:animate-bounce inline-block" width="22" height="22" src="https://img.icons8.com/fluency/22/blogger.png" alt="blogger"/></a> | <a target="_blank" href="https://x.com/sagarsuri_in"><img width="18" height="18" class="inline-block hover:animate-bounce rounded-sm" src="../IMG/x.png" alt="twitterx--v1"/></a></p>
         </footer>
     </div>
 
@@ -162,8 +224,6 @@
     
         // Prevent context menu on right-click
         document.addEventListener('contextmenu', event => event.preventDefault());
-    </script>
-
     </script>
 </body>
 </html>
