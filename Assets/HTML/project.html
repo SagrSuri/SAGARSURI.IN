@@ -171,11 +171,21 @@
 
     <!-- External JavaScript -->
     <script src="https://kit.fontawesome.com/25a68331e1.js" crossorigin="anonymous"></script>
-    
+    <audio id="clickSound">
+        <source src="../IMG/clicksound.mp3" type="audio/mpeg">
+        <!-- Add fallback for other formats if necessary -->
+        Your browser does not support the audio element.
+    </audio>
     <script> 
-       // Function to toggle dark mode
+       // Function to toggle dark mode and play click sound
        function toggleDarkMode() {
             const body = document.body;
+            const clickSound = document.getElementById('clickSound');
+            if (clickSound.paused) {
+                clickSound.play();
+            } else {
+                clickSound.currentTime = 0;
+            }
             body.classList.toggle('dark');
             
             // Save the current mode to localStorage

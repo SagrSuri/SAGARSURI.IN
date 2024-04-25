@@ -126,8 +126,8 @@
                         </span>
                     </div>
                 </div>
-                <button onclick="toggleDarkMode()" id="darkModeToggle" type="button" class="hover:animate-pulse active:animate-ping stroke-lime-50  ">
-                    <img src="./Assets/IMG/toggel off.png" alt="off" class="h-12 w-14">
+                <button onclick="toggleDarkMode()" id="darkModeToggle" type="button" class="hover:animate-pulse active:animate-ping stroke-lime-50">
+                    <img src="./Assets/IMG/toggle-off.png" alt="off" class="h-12 w-14">
                 </button>
             </nav>
         </header>
@@ -154,13 +154,62 @@
             <p>&copy; <a class="hover:animate-pulse" href="https://linkedin.com/in/sagrsuri" target="_blank">SAGARSURI.<i class="fa-brands fa-linkedin-in"></i></a> | 2023-2024 |  <a target="_blank" href="https://youtube.com/@sagrsuri"><img width="22" height="22" class="inline-block hover:animate-bounce" src="https://img.icons8.com/3d-fluency/22/youtube-play.png" alt="youtube-play"/></a> | <a target="_blank" href="https://instagram.com/sagarsuri.in"><img width="22" height="22" src="https://img.icons8.com/3d-fluency/22/instagram-new.png" alt="instagram-new" class="inline-block hover:animate-bounce"/></a> | <a target="_blank" href="https://sagarsurics.blogspot.com"><img class="hover:animate-bounce inline-block" width="22" height="22" src="https://img.icons8.com/fluency/22/blogger.png" alt="blogger"/></a> | <a target="_blank" href="https://x.com/sagarsuri_in"><img width="18" height="18" class="inline-block hover:animate-bounce rounded-sm" src="./Assets/IMG/x.png" alt="twitterx--v1"/></a></p>
         </footer>
     </div>
+    <audio id="clickSound">
+        <source src="./Assets/IMG/click_effect-86995.mp3" type="audio/mpeg">
+        <!-- Add fallback for other formats if necessary -->
+        Your browser does not support the audio element.
+    </audio>
 
     <!-- External JavaScript -->
     <script>
-        //For
-        // For animating text
+        // Function to toggle dark mode and play click sound
+        function toggleDarkMode() {
+            var clickSound = document.getElementById('clickSound');
+            if (clickSound.paused) {
+                clickSound.play();
+            } else {
+                clickSound.currentTime = 0;
+            }
+
+            const body = document.body;
+            body.classList.toggle('dark');
+
+            // Save the current mode to localStorage
+            const isDarkMode = body.classList.contains('dark');
+            localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+
+            // Change the image of the toggle button based on dark mode state
+            const toggleButton = document.getElementById('darkModeToggle');
+            if (isDarkMode) {
+                toggleButton.querySelector('img').src = './Assets/IMG/on-toggel.png'; // Change image to ON when dark mode is activated
+            } else {
+                toggleButton.querySelector('img').src = './Assets/IMG/toggel off.png'; // Change image to OFF when dark mode is deactivated
+            }
+        }
+
+        // Function to apply the saved dark mode preference
+        function applyDarkModePreference() {
+            const savedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
+            const body = document.body;
+            // If dark mode preference is saved and it's true, apply dark mode
+            if (savedDarkMode) {
+                body.classList.add('dark');
+            } else {
+                body.classList.remove('dark');
+            }
+
+            // Set initial image based on dark mode state
+            const toggleButton = document.getElementById('darkModeToggle');
+            if (savedDarkMode) {
+                toggleButton.querySelector('img').src = './Assets/IMG/on-toggel.png'; // Set image to ON if dark mode is initially activated
+            } else {
+                toggleButton.querySelector('img').src = './Assets/IMG/toggel off.png'; // Set image to OFF if dark mode is initially deactivated
+            }
+        }
+
+        // Text animation function
         const animated_text = document.querySelector(".animated_text")
-    
+
         const Text_change = () => {
             setTimeout(() => {
                 animated_text.textContent = "SAGAR SURI"
@@ -174,58 +223,20 @@
         }
         Text_change();
         setInterval(Text_change, 12000)
-    
+
         // Disable right-click on the image
         document.querySelector('img').addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
-    
-        // Function to toggle dark mode
-        function toggleDarkMode() {
-            const body = document.body;
-            body.classList.toggle('dark');
-            
-            // Save the current mode to localStorage
-            const isDarkMode = body.classList.contains('dark');
-            localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    
-            // Change the image of the toggle button based on dark mode state
-            const toggleButton = document.getElementById('darkModeToggle');
-            if (isDarkMode) {
-                toggleButton.querySelector('img').src = './Assets/IMG/on-toggel.png'; // Change image to ON when dark mode is activated
-            } else {
-                toggleButton.querySelector('img').src = './Assets/IMG/toggel off.png'; // Change image to OFF when dark mode is deactivated
-            }
-        }
-    
-        // Function to check and apply the saved dark mode preference
-        function applyDarkModePreference() {
-            const savedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
-            const body = document.body;
-            // If dark mode preference is saved and it's true, apply dark mode
-            if (savedDarkMode) {
-                body.classList.add('dark');
-            } else {
-                body.classList.remove('dark');
-            }
-    
-            // Set initial image based on dark mode state
-            const toggleButton = document.getElementById('darkModeToggle');
-            if (savedDarkMode) {
-                toggleButton.querySelector('img').src = './Assets/IMG/on-toggel.png'; // Set image to ON if dark mode is initially activated
-            } else {
-                toggleButton.querySelector('img').src = './Assets/IMG/toggel off.png'; // Set image to OFF if dark mode is initially deactivated
-            }
-        }
-    
-        // PAGE LOADING ANIMATION 
+
+        // Page loading animation
         document.addEventListener("DOMContentLoaded", function () {
             // Show loading animation when the page starts loading
             document.getElementById("loading").style.display = "block";
-    
+
             // Apply the saved dark mode preference
             applyDarkModePreference();
-    
+
             // Hide loading animation after a certain duration (adjust as needed)
             setTimeout(function () {
                 document.getElementById("loading").style.display = "none";
@@ -233,7 +244,7 @@
                 document.getElementById("content").style.display = "block";
             }, 1000); // Adjust duration as needed
         });
-    
+
         // Prevent context menu on right-click
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
