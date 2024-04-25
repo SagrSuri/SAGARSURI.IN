@@ -47,3 +47,9 @@
 [submodule "SubModule/Real-state"]
 	path = SubModule/Real-state
 	url = https://github.com/SagrSuri/Real-state.git
+[submodule "SubModule/portfolio"]
+	path = SubModule/portfolio
+	url = https://github.com/SagrSuri/portfolio.git
+[submodule "portfolio"]
+	path = portfolio
+	url = git@github.com:SagrSuri/portfolio.git
