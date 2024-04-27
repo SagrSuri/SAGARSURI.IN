@@ -55,15 +55,5 @@
     }
     .form-title{
         font-size: 1.5rem;
-        padding-top: 1rem;
     }
-    main{
-        width: 100%;
-    }
-    .section-wrapper{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
 }
