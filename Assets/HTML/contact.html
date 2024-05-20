@@ -1,621 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://img.icons8.com/?size=32&id=BQlLHKSAC1Yu&format=png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=32&id=BQlLHKSAC1Yu&format=png"
+      type="image/x-icon"
+    />
     <title>Contact-Us</title>
-    <link rel="stylesheet" href="../../src/output.css">
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="stylesheet" href="../CSS/project.css">
-    
+    <link rel="stylesheet" href="../../src/output.css" />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/project.css" />
+
     <style>
-        /* Loading animation styles */
-        .loading {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            border: 5px solid #3498db;
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s linear infinite;
-            z-index: 9999; /* Ensure it's above all other elements */
+      /* Loading animation styles */
+      .loading {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border: 5px solid #3498db;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 1s linear infinite;
+        z-index: 9999;
+        /* Ensure it's above all other elements */
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Text color for dark mode */
+      body.dark {
+        color: white;
+      }
+
+      /* Text color for specific elements in dark mode */
+      body.dark #content header a {
+        color: white;
+      }
+
+      /* Push footer to the bottom */
+      html,
+      body {
+        height: 100%;
+      }
+
+      #content {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      footer {
+        margin-top: auto;
+      }
+
+      /* For Text Animation */
+      .container .text {
+        font-size: 1.5rem;
+        font-weight: 550;
+      }
+
+      .container .animated_text {
+        color: #e30085;
+        position: relative;
+      }
+
+      .container .animated_text::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        border-left: 2px solid #24a700;
+        animation: typing 4s steps(12) infinite;
+      }
+
+      @keyframes typing {
+        40%,
+        60% {
+          left: 100%;
         }
 
-        /* Text color for dark mode */
-        body.dark {
-            color: white;
+        100% {
+          left: 0;
         }
-        
-        /* Text color for specific elements in dark mode */
-        body.dark #content header a {
-            color: white;
-        }
+      }
 
-        /* Push footer to the bottom */
-        html, body {
-            height: 100%;
-        }
+      /* Apply dark mode styles */
+      .dark .container .animated_text::before {
+        background-color: #1f2933;
+        /* Change background color for dark mode */
+      }
 
-        #content {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+      .dark .container .text.const_text {
+        color: white;
+        /* Change text color for dark mode */
+      }
 
-        footer {
-            margin-top: auto;
-        }
-
-
-        /* For Text Animation */
-        .container .text {
-            font-size: 1.5rem;
-            font-weight: 550;
-        }
-
-        .container .animated_text {
-            color: #e30085;
-            position: relative;
-        }
-
-        .container .animated_text::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff;
-            border-left: 2px solid #24a700;
-            animation: typing 4s steps(12) infinite;
-        }
-
-        @keyframes typing {
-            40%,
-            60% {
-                left: 100%;
-            }
-            100% {
-                left: 0;
-            }
-        }
-
-        /* Apply dark mode styles */
-        .dark .container .animated_text::before {
-            background-color: #1F2933; /* Change background color for dark mode */
-        }
-
-        .dark .container .text.const_text {
-            color: white; /* Change text color for dark mode */
-        }
-
-        .dark .container .text.animated_text {
-            color: white; /* Change text color for dark mode */
-        }
-
+      .dark .container .text.animated_text {
+        color: white;
+        /* Change text color for dark mode */
+      }
     </style>
     <!-- ----------------------------contactcss---------------- -->
-     <style>
-        * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-}
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", Times, serif;
+      }
 
-body {
-    /* background-image: url('https://images.pexels.com/photos/735277/pexels-photo-735277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
-    background-repeat: no repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 50% 50%;
-}
+      body {
+        /* background-image: url('https://images.pexels.com/photos/735277/pexels-photo-735277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+        background-repeat: no repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: 50% 50%;
+      }
 
-#section-wrapper {
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
-.box-wrapper {
-    position: relative;
-    display: table;
-    width: 88vw;
-    top: 15px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    border-radius: 30px;
-    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.4));
-}
-
-.box-wrapper:hover {
-    transition: 0.25s;
-    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.7));
-}
-
-.info-wrap {
-    width: 35%;
-    height: 100vh;
-    padding: 40px;
-    float: left;
-    display: block;
-    border-radius: 30px 0px 0px 30px;
-    background: linear-gradient(144deg, #ff0101e6 0%, #6335c7e6 49%);
-    color: #fff;
-}
-
-.info-title {
-    text-align: left;
-    font-size: 28px;
-    letter-spacing: 0.5px;
-    text-shadow: 1px 2px 2px black;
-}
-
-.info-sub-title {
-    font-size: 18px;
-    font-weight: 300;
-    margin-top: 17px;
-    letter-spacing: 0.5px;
-    line-height: 26px;
-    text-shadow: 1px 1px 2px black;
-}
-
-.info-details {
-    list-style: none;
-    margin: 60px 0px;
-}
-
-.info-details li {
-    margin-top: 25px;
-    font-size: 18px;
-    color: #fff;
-    text-shadow: 1px 1px 2px black;
-}
-
-.info-details li i {
-    background: #49025f;
-    padding: 9px;
-    border-radius: 50%;
-    font-size: 14px;
-    margin-right: 5px;
-    text-shadow: 1px 2px 2px black;
-    box-shadow: 1px 1px 2px black;
-}
-
-.info-details li a {
-    color: #fff;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all .4s;
-}
-
-.info-details li a:hover {
-    color: #f44770;
-}
-
-.social-icons {
-    list-style: none;
-    text-align: center;
-    margin: 20px 0px;
-}
-
-.social-icons li {
-    display: inline-block;
-}
-
-.social-icons li i {
-    background: #49025f;
-    color: #fff;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 22%;
-    margin: 0px 5px;
-    cursor: pointer;
-    transition: all 0.5s;
-    box-shadow: 1px 1px 2px black;
-}
-
-.social-icons li i:hover {
-    background: #fff;
-    color: #49025f;
-}
-
-.form-wrap {
-    width: 65%;
-    height: 100vh;
-    float: right;
-    padding: 40px 25px 35px 25px;
-    border-radius: 0px 30px 30px 0px;
-    background: #fffdf8;
-    margin-bottom: 10px;
-}
-
-.form-title {
-    font-family: Georgia, 'Times New Roman', Times, serif !important;
-    text-align: center;
-    margin-left: 23px;
-    font-size: 30px;
-    letter-spacing: 0.5px;
-    text-shadow: 1px 1px 2px black, 1px 1px 2px white;
-}
-
-.form-fields {
-    display: table;
-    width: 100%;
-    padding: 15px 5px 5px 5px;
-}
-
-.form-fields input,
-.form-fields textarea {
-    /* text-transform:capitalize; */
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 18px;
-    color: #00031b;
-    padding: 20px 10px 20px 5px;
-    width: 100%;
-}
-
-.form-fields textarea {
-    height: 150px;
-    resize: none;
-}
-
-.form-group {
-    width: 46%;
-    float: left;
-    padding: 0px 30px;
-    margin: 14px 12px;
-    border-radius: 25px;
-    box-shadow: inset 4px 4px 4px #bdbcba, inset -4px -4px 4px #bebebe81;
-}
-
-.form-fields .form-group:last-child {
-    width: 96%;
-}
-
-.submit-button {
-    width: 96%;
-    height: 9vh;
-    margin: 25px 12px;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: 500;
-    text-shadow: 1px 2px 2px black;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    text-align: center;
-    background: #49025fdf;
-    box-shadow: 2px 3px 8px #7d7a7a, -3px -3px 8px white;
-    transition: transform 0.5s;
-}
-
-.submit-button:hover {
-    background: #31279de0;
-    transform: scale(0.98);
-}
-
-/* Responsive css */
-
-@media screen and (min-width: 767px) and (max-width: 1023px) {
-    .box-wrapper {
-        width: 85%;
-    }
-
-    .info-wrap {
-        width: 40%;
-        padding: 16px;
-    }
-
-    .form-wrap {
-        width: 60%;
-    }
-
-    .form-group {
-        padding-left: 15px;
-        margin-left: 0px;
-    }
-
-    .submit-button {
-        margin-left: 5px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .box-wrapper {
-        width: 90%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        top: 0;
-    }
-
-    .info-wrap {
+      #section-wrapper {
         width: 100%;
-        height: 40%;
-        float: none;
-    }
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
 
-    .form-wrap {
+      .box-wrapper {
+        position: relative;
+        display: table;
+        width: 88vw;
+        top: 15px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 30px;
+        filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.4));
+      }
+
+      .box-wrapper:hover {
+        transition: 0.25s;
+        filter: drop-shadow(0px 0px 10px rgb(0, 0, 0, 0.7));
+      }
+
+      .info-wrap {
+        width: 35%;
+        height: 100vh;
+        padding: 40px;
+        float: left;
+        display: block;
+        border-radius: 30px 0px 0px 30px;
+        background: linear-gradient(144deg, #ff0101e6 0%, #6335c7e6 49%);
+        color: #fff;
+      }
+
+      .info-title {
+        text-align: left;
+        font-size: 28px;
+        letter-spacing: 0.5px;
+        text-shadow: 1px 2px 2px black;
+      }
+
+      .info-sub-title {
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 17px;
+        letter-spacing: 0.5px;
+        line-height: 26px;
+        text-shadow: 1px 1px 2px black;
+      }
+
+      .info-details {
+        list-style: none;
+        margin: 60px 0px;
+      }
+
+      .info-details li {
+        margin-top: 25px;
+        font-size: 18px;
+        color: #fff;
+        text-shadow: 1px 1px 2px black;
+      }
+
+      .info-details li i {
+        background: #49025f;
+        padding: 9px;
+        border-radius: 50%;
+        font-size: 14px;
+        margin-right: 5px;
+        text-shadow: 1px 2px 2px black;
+        box-shadow: 1px 1px 2px black;
+      }
+
+      .info-details li a {
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        transition: all 0.4s;
+      }
+
+      .info-details li a:hover {
+        color: #f44770;
+      }
+
+      .social-icons {
+        list-style: none;
+        text-align: center;
+        margin: 20px 0px;
+      }
+
+      .social-icons li {
+        display: inline-block;
+      }
+
+      .social-icons li i {
+        background: #49025f;
+        color: #fff;
+        padding: 15px;
+        font-size: 20px;
+        border-radius: 22%;
+        margin: 0px 5px;
+        cursor: pointer;
+        transition: all 0.5s;
+        box-shadow: 1px 1px 2px black;
+      }
+
+      .social-icons li i:hover {
+        background: #fff;
+        color: #49025f;
+      }
+
+      .form-wrap {
+        width: 65%;
+        height: 100vh;
+        float: right;
+        padding: 40px 25px 35px 25px;
+        border-radius: 0px 30px 30px 0px;
+        background: #fffdf8;
+        margin-bottom: 10px;
+      }
+
+      .form-title {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        text-align: center;
+        margin-left: 23px;
+        font-size: 30px;
+        letter-spacing: 0.5px;
+        text-shadow: 1px 1px 2px black, 1px 1px 2px white;
+      }
+
+      .form-fields {
+        display: table;
         width: 100%;
-        height: 60%;
-        float: none;
-    }
+        padding: 15px 5px 5px 5px;
+      }
 
-    .info-wrap {
-        border-radius: 30px 30px 0px 0px;
-    }
-
-    .form-wrap {
-        border-radius: 0px 0px 30px 30px;
-    }
-
-    .form-group {
+      .form-fields input,
+      .form-fields textarea {
+        /* text-transform:capitalize; */
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 18px;
+        color: #00031b;
+        padding: 20px 10px 20px 5px;
         width: 100%;
-        float: none;
-        margin: 25px 0px;
-    }
+      }
 
-    .form-fields .form-group:last-child,
-    .submit-button {
-        width: 100%;
-    }
+      .form-fields textarea {
+        height: 150px;
+        resize: none;
+      }
 
-    .submit-button {
-        margin: 10px 0px;
-    }
-}
-/* #msg{
+      .form-group {
+        width: 46%;
+        float: left;
+        padding: 0px 30px;
+        margin: 14px 12px;
+        border-radius: 25px;
+        box-shadow: inset 4px 4px 4px #bdbcba, inset -4px -4px 4px #bebebe81;
+      }
+
+      .form-fields .form-group:last-child {
+        width: 96%;
+      }
+
+      .submit-button {
+        width: 96%;
+        height: 9vh;
+        margin: 25px 12px;
+        border-radius: 30px;
+        font-size: 20px;
+        font-weight: 500;
+        text-shadow: 1px 2px 2px black;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        text-align: center;
+        background: #49025fdf;
+        box-shadow: 2px 3px 8px #7d7a7a, -3px -3px 8px white;
+        transition: transform 0.5s;
+      }
+
+      .submit-button:hover {
+        background: #31279de0;
+        transform: scale(0.98);
+      }
+
+      /* Responsive css */
+
+      @media screen and (min-width: 767px) and (max-width: 1023px) {
+        .box-wrapper {
+          width: 85%;
+        }
+
+        .info-wrap {
+          width: 40%;
+          padding: 16px;
+        }
+
+        .form-wrap {
+          width: 60%;
+        }
+
+        .form-group {
+          padding-left: 15px;
+          margin-left: 0px;
+        }
+
+        .submit-button {
+          margin-left: 5px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .box-wrapper {
+          width: 90%;
+          margin-top: 5%;
+          margin-bottom: 5%;
+          top: 0;
+        }
+
+        .info-wrap {
+          width: 100%;
+          height: 40%;
+          float: none;
+        }
+
+        .form-wrap {
+          width: 100%;
+          height: 60%;
+          float: none;
+        }
+
+        .info-wrap {
+          border-radius: 30px 30px 0px 0px;
+        }
+
+        .form-wrap {
+          border-radius: 0px 0px 30px 30px;
+        }
+
+        .form-group {
+          width: 100%;
+          float: none;
+          margin: 25px 0px;
+        }
+
+        .form-fields .form-group:last-child,
+        .submit-button {
+          width: 100%;
+        }
+
+        .submit-button {
+          margin: 10px 0px;
+        }
+      }
+
+      /* #msg{
     color: #61b752;
     margin-top: -20px;
     display: block;
 } */
 
-::placeholder {
-    color: #000000a0;
-    font-size: 14px;
-    text-transform: capitalize;
-}
+      ::placeholder {
+        color: #000000a0;
+        font-size: 14px;
+        text-transform: capitalize;
+      }
     </style>
-</head>
-<body id="font-set" class="bg-slate-200 text-slate-950">
+  </head>
+
+  <body id="font-set" class="bg-slate-200 text-slate-950">
     <!-- Loading Animation -->
     <div id="loading" class="loading"></div>
 
     <!-- Content -->
-    <div id="content" style="display: none;">
-        <header class="p-4 bg-slate-100 dark:bg-slate-800 mt-0">
-            <nav class="flex justify-between items-center">
-               
-                <ul class="flex gap-8">
-                    <li><a class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse" href="../../index.html">HOME</a></li>
-                    <li><a class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse" href="./project.html">PROJECT</a></li>
-                </ul>
-                <h1 class="text-center text-green-600 dark:bg-white rounded-sm dark:hover:bg-slate-300 pt-0 px-1 cursor-default ">CONTACT</h1>
-                <!-- <button onclick="toggleDarkMode()" type="button" class="bg-slate-500 hover:animate-pulse text-white dark:bg-slate-300 dark:text-black text-sm rounded-full px-4 py-2">Dark Mode</button> -->
+    <div id="content" style="display: none">
+      <header class="p-4 bg-slate-100 dark:bg-slate-800 mt-0">
+        <nav class="flex justify-between items-center">
+          <ul class="flex gap-8">
+            <li>
+              <a
+                class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse"
+                href="../../index.html"
+                >HOME</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:bg-black hover:text-white hover:pr-3 hover:pt-1 hover:pb-1 hover:pl-3 rounded-2xl dark:hover:bg-green-500 hover:animate-pulse"
+                href="./project.html"
+                >PROJECT</a
+              >
+            </li>
+          </ul>
+          <h1
+            class="text-center text-green-600 dark:bg-white rounded-sm dark:hover:bg-slate-300 pt-0 px-1 cursor-default"
+          >
+            CONTACT
+          </h1>
+          <!-- <button onclick="toggleDarkMode()" type="button" class="bg-slate-500 hover:animate-pulse text-white dark:bg-slate-300 dark:text-black text-sm rounded-full px-4 py-2">Dark Mode</button> -->
 
-                <button onclick="toggleDarkMode()" id="darkModeToggle" type="button" class="hover:animate-pulse stroke-lime-50  active:animate-ping">
-                    <img src="../IMG/toggel off.png" alt="off" class="h-12 w-14">
-                </button>
-            </nav>
-        </header>
-        <main class="font-normal font-serif w-full overflow-y-auto dark:bg-slate-950 dark:text-white ">
+          <button
+            onclick="toggleDarkMode()"
+            id="darkModeToggle"
+            type="button"
+            class="hover:animate-pulse stroke-lime-50 active:animate-ping"
+          >
+            <img src="../IMG/toggel off.png" alt="off" class="h-12 w-14" />
+          </button>
+        </nav>
+      </header>
+      <main
+        class="font-normal font-serif w-full overflow-y-auto dark:bg-slate-950 dark:text-white"
+      >
+        <section id="section-wrapper">
+          <div class="box-wrapper">
+            <div
+              class="info-wrap dark:bg-gradient-to-br dark:from-blue-600 dark:via-[#6335c7e6] dark:to-purple-800 dark:text-white"
+            >
+              <h2 class="info-title">Contact Information</h2>
 
-            <section id="section-wrapper">
-
-                <div class="box-wrapper">
-                    <div class="info-wrap dark:bg-gradient-to-br dark:from-blue-600 dark:via-[#6335c7e6] dark:to-purple-800 dark:text-white">
-                        <h2 class="info-title">Contact Information</h2>
-                        
-                        <ul class="info-details">
-                            
-                            <li>
-                                <i class="fas fa-paper-plane"></i>
-                                <span>Email:</span>
-                                <a href="mailto:sagrsuri@gmail.com" target="_blank"> SAGRSURI@GMAIL.COM</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-phone"></i>
-                                <span>Mobile No.</span>
-                                <a href="https://wa.me/918446262100" target="_blank"> +91 8446262100</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-globe"></i>
-                                <span>Website:</span>
-                                <a href="https://www.sagarsuri.in/" target="_blank"> SAGARSURI.IN</a>
-                            </li>
-                        </ul>
-                        <ul class="social-icons">
-                            <li>
-                                <a href="https://www.linkedin.com/in/sagarsuriofficial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/@sagrsuri" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.github.com/SAGRSURI" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com/sagarsuri_in/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="form-wrap dark:bg-slate-800">
-                        <form name="submit-to-google-sheet" autocomplete="off" onsubmit="return validateEmail()">
-                            <div>
-                                <h2 class="form-title">Send us a message :)</h2>
-                            </div> 
-                            <div class="form-fields">
-                                <div class="form-group">
-                                    <input id=cform type="text" class="fname dark:text-white" name="FirstName" placeholder="First Name" required />
-                                </div>
-                                <div class="form-group">
-                                    <input id=cform type="text" class="fname dark:text-white" name="LastName" placeholder="Last Name" required />
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="Mobile dark:text-white" pattern="[0-9]{10}" name="Mobile" placeholder="Mobile No." required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" id="email" class="email dark:text-white" name="Email" placeholder="Email" required>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="dark:text-white" name="Message" placeholder="Your Message" required></textarea>
-                                </div>
-                            </div>
-                            <div>
-                                <button type="submit" class="submit-button" id="msg" >Send Message</button>
-                            </div>
-                            <audio id="clickSoundS">
-                                <source src="../IMG/Submit.mp3" type="audio/mpeg">
-                                <!-- Add fallback for other formats if necessary -->
-                                <!-- Your browser does not support the audio element. -->
-                            </audio>
-                        </form>
-                    </div>
+              <ul class="info-details">
+                <li>
+                  <i class="fas fa-paper-plane"></i>
+                  <span>Email:</span>
+                  <a href="mailto:sagrsuri@gmail.com" target="_blank">
+                    SAGRSURI@GMAIL.COM</a
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-phone"></i>
+                  <span>Mobile No.</span>
+                  <a href="https://wa.me/918446262100" target="_blank">
+                    +91 8446262100</a
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-globe"></i>
+                  <span>Website:</span>
+                  <a href="https://www.sagarsuri.in/" target="_blank">
+                    SAGARSURI.IN</a
+                  >
+                </li>
+              </ul>
+              <ul class="social-icons">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/sagarsuriofficial/"
+                    target="_blank"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@sagrsuri" target="_blank"
+                    ><i class="fa-brands fa-youtube"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.github.com/SAGRSURI" target="_blank"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.twitter.com/sagarsuri_in/"
+                    target="_blank"
+                    ><i class="fa-brands fa-x-twitter"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <div class="form-wrap dark:bg-slate-800">
+              <form
+                name="submit-to-google-sheet"
+                autocomplete="off"
+                onsubmit="return validateEmail()"
+              >
+                <div>
+                  <h2 class="form-title">Send us a message :)</h2>
                 </div>
-            </section>
-            
-        </main>
-        
-        <footer class="p-4 bg-slate-100 dark:bg-slate-800 text-center w-full mt-auto">
-            <!-- Footer content here -->
-            <h1 class="text-xl font-bold"><a href="https://github.com/sagrsuri/sagarsuri.in">Contribute <i class="fa-solid fa-code-branch"></i></a></h1>
-            <p>&copy; <a class="hover:animate-pulse" href="https://linkedin.com/in/sagrsuri" target="_blank">SAGARSURI.<i class="fa-brands fa-linkedin-in"></i></a> | 2023-2024 |  <a target="_blank" href="https://youtube.com/@sagrsuri"><img width="22" height="22" class="inline-block hover:animate-bounce" src="https://img.icons8.com/3d-fluency/22/youtube-play.png" alt="youtube-play"/></a> | <a target="_blank" href="https://instagram.com/sagarsuri.in"><img width="22" height="22" src="https://img.icons8.com/3d-fluency/22/instagram-new.png" alt="instagram-new" class="inline-block hover:animate-bounce"/></a> | <a target="_blank" href="https://sagarsurics.blogspot.com"><img class="hover:animate-bounce inline-block" width="22" height="22" src="https://img.icons8.com/fluency/22/blogger.png" alt="blogger"/></a> | <a target="_blank" href="https://x.com/sagarsuri_in"><img width="18" height="18" class="inline-block hover:animate-bounce rounded-sm" src="../IMG/x.png" alt="twitterx--v1"/></a></p>
-        </footer>
-        
+                <div class="form-fields">
+                  <div class="form-group">
+                    <input
+                      id="cform"
+                      type="text"
+                      class="fname dark:text-white"
+                      name="FirstName"
+                      placeholder="First Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      id="cform"
+                      type="text"
+                      class="fname dark:text-white"
+                      name="LastName"
+                      placeholder="Last Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="tel"
+                      class="Mobile dark:text-white"
+                      pattern="[0-9]{10}"
+                      name="Mobile"
+                      placeholder="Mobile No."
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      id="email"
+                      class="email dark:text-white"
+                      name="Email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <textarea
+                      class="dark:text-white"
+                      name="Message"
+                      placeholder="Your Message"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+                <div>
+                  <button type="submit" class="submit-button" id="msg">
+                    Send Message
+                  </button>
+                </div>
+                <audio id="clickSoundS">
+                  <source src="../IMG/Submit.mp3" type="audio/mpeg" />
+                  <!-- Add fallback for other formats if necessary -->
+                  <!-- Your browser does not support the audio element. -->
+                </audio>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="p-4 bg-slate-100 dark:bg-slate-800 text-center w-full mt-auto"
+      >
+        <!-- Footer content here -->
+        <h1 class="text-xl font-bold">
+          <a href="https://github.com/sagrsuri/sagarsuri.in"
+            >Contribute <i class="fa-solid fa-code-branch"></i
+          ></a>
+        </h1>
+        <p>
+          &copy;
+          <a
+            class="hover:animate-pulse"
+            href="https://linkedin.com/in/sagrsuri"
+            target="_blank"
+            >SAGARSURI.<i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          | 2023-2024 |
+          <a target="_blank" href="https://youtube.com/@sagrsuri"
+            ><img
+              width="22"
+              height="22"
+              class="inline-block hover:animate-bounce"
+              src="https://img.icons8.com/3d-fluency/22/youtube-play.png"
+              alt="youtube-play"
+          /></a>
+          |
+          <a target="_blank" href="https://instagram.com/sagarsuri.in"
+            ><img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/3d-fluency/22/instagram-new.png"
+              alt="instagram-new"
+              class="inline-block hover:animate-bounce"
+          /></a>
+          |
+          <a target="_blank" href="https://sagarsurics.blogspot.com"
+            ><img
+              class="hover:animate-bounce inline-block"
+              width="22"
+              height="22"
+              src="https://img.icons8.com/fluency/22/blogger.png"
+              alt="blogger"
+          /></a>
+          |
+          <a target="_blank" href="https://x.com/sagarsuri_in"
+            ><img
+              width="18"
+              height="18"
+              class="inline-block hover:animate-bounce rounded-sm"
+              src="../IMG/x.png"
+              alt="twitterx--v1"
+          /></a>
+        </p>
+      </footer>
     </div>
 
     <!-- External JavaScript -->
-    <script src="https://kit.fontawesome.com/25a68331e1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/25a68331e1.js"
+      crossorigin="anonymous"
+    ></script>
     <audio id="clickSound">
-        <source src="../IMG/clicksound.mp3" type="audio/mpeg">
-        <!-- Add fallback for other formats if necessary -->
-        Your browser does not support the audio element.
+      <source src="../IMG/clicksound.mp3" type="audio/mpeg" />
+      <!-- Add fallback for other formats if necessary -->
+      Your browser does not support the audio element.
     </audio>
-    <script> 
-       // Function to toggle dark mode and play click sound
-       function toggleDarkMode() {
-            const body = document.body;
-            const clickSound = document.getElementById('clickSound');
-            if (clickSound.paused) {
-                clickSound.play();
-            } else {
-                clickSound.currentTime = 0;
-            }
-            body.classList.toggle('dark');
-            
-            // Save the current mode to localStorage
-            const isDarkMode = body.classList.contains('dark');
-            localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    
-            // Change the image of the toggle button based on dark mode state
-            const toggleButton = document.getElementById('darkModeToggle');
-            if (isDarkMode) {
-                toggleButton.querySelector('img').src = '../IMG/on-toggel.png'; // Change image to ON when dark mode is activated
-            } else {
-                toggleButton.querySelector('img').src = '../IMG/toggel off.png'; // Change image to OFF when dark mode is deactivated
-            }
+    <script>
+      // Function to toggle dark mode and play click sound
+      function toggleDarkMode() {
+        const body = document.body;
+        const clickSound = document.getElementById("clickSound");
+        if (clickSound.paused) {
+          clickSound.play();
+        } else {
+          clickSound.currentTime = 0;
         }
-    
-        // Function to check and apply the saved dark mode preference
-        function applyDarkModePreference() {
-            const savedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
-            const body = document.body;
-            // If dark mode preference is saved and it's true, apply dark mode
-            if (savedDarkMode) {
-                body.classList.add('dark');
-            } else {
-                body.classList.remove('dark');
-            }
-    
-            // Set initial image based on dark mode state
-            const toggleButton = document.getElementById('darkModeToggle');
-            if (savedDarkMode) {
-                toggleButton.querySelector('img').src = '../IMG/on-toggel.png'; // Set image to ON if dark mode is initially activated
-            } else {
-                toggleButton.querySelector('img').src = '../IMG/toggel off.png'; // Set image to OFF if dark mode is initially deactivated
-            }
+        body.classList.toggle("dark");
+
+        // Save the current mode to localStorage
+        const isDarkMode = body.classList.contains("dark");
+        localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
+
+        // Change the image of the toggle button based on dark mode state
+        const toggleButton = document.getElementById("darkModeToggle");
+        if (isDarkMode) {
+          toggleButton.querySelector("img").src = "../IMG/on-toggel.png"; // Change image to ON when dark mode is activated
+        } else {
+          toggleButton.querySelector("img").src = "../IMG/toggel off.png"; // Change image to OFF when dark mode is deactivated
         }
-    
-        // PAGE LOADING ANIMATION 
-        document.addEventListener("DOMContentLoaded", function () {
-            // Show loading animation when the page starts loading
-            document.getElementById("loading").style.display = "block";
-    
-            // Apply the saved dark mode preference
-            applyDarkModePreference();
-    
-            // Hide loading animation after a certain duration (adjust as needed)
-            setTimeout(function () {
-                document.getElementById("loading").style.display = "none";
-                // Show content after loading animation completes
-                document.getElementById("content").style.display = "block";
-            }, 1000); // Adjust duration as needed
-        });
-    
-        // Prevent context menu on right-click
-        document.addEventListener('contextmenu', event => event.preventDefault());
+      }
+
+      // Function to check and apply the saved dark mode preference
+      function applyDarkModePreference() {
+        const savedDarkMode = JSON.parse(localStorage.getItem("darkMode"));
+        const body = document.body;
+        // If dark mode preference is saved and it's true, apply dark mode
+        if (savedDarkMode) {
+          body.classList.add("dark");
+        } else {
+          body.classList.remove("dark");
+        }
+
+        // Set initial image based on dark mode state
+        const toggleButton = document.getElementById("darkModeToggle");
+        if (savedDarkMode) {
+          toggleButton.querySelector("img").src = "../IMG/on-toggel.png"; // Set image to ON if dark mode is initially activated
+        } else {
+          toggleButton.querySelector("img").src = "../IMG/toggel off.png"; // Set image to OFF if dark mode is initially deactivated
+        }
+      }
+
+      // PAGE LOADING ANIMATION
+      document.addEventListener("DOMContentLoaded", function () {
+        // Show loading animation when the page starts loading
+        document.getElementById("loading").style.display = "block";
+
+        // Apply the saved dark mode preference
+        applyDarkModePreference();
+
+        // Hide loading animation after a certain duration (adjust as needed)
+        setTimeout(function () {
+          document.getElementById("loading").style.display = "none";
+          // Show content after loading animation completes
+          document.getElementById("content").style.display = "block";
+        }, 1000); // Adjust duration as needed
+      });
+
+      // Prevent context menu on right-click
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
     </script>
 
     <!-- -----------------------------------------------inported------------------- -->
     <script>
-    
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzDgTtdkxC9Kmu3B6g9Svlc4C9d_3U_rUt-qC4ri6UjfUar59vd0bDkFJMmHUoq036IXQ/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-                      msg.innerHTML = "Send Successfully"
-                      msg.style.background = "#61b752";
-                      submitButton();
-                      setTimeout(function(){
-                          msg.innerHTML = "Send New Messege"
-                          msg.style.background = "#49025f";
-                      },2000)
-                      form.reset()
-                  })
-            .catch(error => console.error('Error!', error.message))
-        })
-      
-       </script>
-       <script>
-          function submitButton(){
-              let clickSound = document.getElementById("clickSoundS");
-              if (clickSound.paused) {
-                      clickSound.play();
-                  } else {
-                      clickSound.currentTime = 0;
-                  }
-          }
-       </script>
-      
-       <!-- -----------------for Email validation----------------- -->
-       <script>
-          function validateEmail() {
-              var emailInput = document.getElementById('email').value;
-              var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              if (regex.test(emailInput)) {
-                  return true; // Email is valid
-              } else {
-                  alert("Please enter a valid email address.");
-                  return false; // Prevent form submission
-              }
-          }
-      </script>
-</body>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbzDgTtdkxC9Kmu3B6g9Svlc4C9d_3U_rUt-qC4ri6UjfUar59vd0bDkFJMmHUoq036IXQ/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Send Successfully";
+            msg.style.background = "#61b752";
+            submitButton();
+            setTimeout(function () {
+              msg.innerHTML = "Send New Messege";
+              msg.style.background = "#49025f";
+            }, 2000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script>
+      function submitButton() {
+        let clickSound = document.getElementById("clickSoundS");
+        if (clickSound.paused) {
+          clickSound.play();
+        } else {
+          clickSound.currentTime = 0;
+        }
+      }
+    </script>
+
+    <!-- -----------------for Email validation----------------- -->
+    <script>
+      function validateEmail() {
+        var emailInput = document.getElementById("email").value;
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (regex.test(emailInput)) {
+          return true; // Email is valid
+        } else {
+          alert("Please enter a valid email address.");
+          return false; // Prevent form submission
+        }
+      }
+    </script>
+  </body>
 </html>
