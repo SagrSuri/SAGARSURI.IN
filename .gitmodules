@@ -47,9 +47,9 @@
 [submodule "SubModule/Real-state"]
 	path = SubModule/Real-state
 	url = https://github.com/SagrSuri/Real-state.git
-[submodule "SubModule/portfolio"]
-	path = SubModule/portfolio
-	url = https://github.com/SagrSuri/portfolio.git
+[submodule "SubModule/portfolio-kevin"]
+	path = SubModule/portfolio-kevin
+	url = https://github.com/SagrSuri/portfolio-kevin.git
 [submodule "portfolio"]
 	path = portfolio
 	url = git@github.com:SagrSuri/portfolio.git
